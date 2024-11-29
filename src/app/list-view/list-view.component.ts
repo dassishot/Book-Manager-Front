@@ -5,11 +5,12 @@ import { FooterComponent } from './footer/footer.component'
 import { NgFor } from '@angular/common'
 import { Book } from '../model/book.model'
 import { BooksServices } from './books.service'
+import { RouterOutlet } from '@angular/router'
 
 @Component({
 	selector: 'app-list-view',
 	providers: [BooksServices],
-	imports: [NgFor, HeaderComponent, RowComponent, FooterComponent],
+	imports: [RouterOutlet, NgFor, HeaderComponent, RowComponent, FooterComponent],
 	templateUrl: './list-view.component.html'
 })
 export class ListViewComponent implements OnInit {
