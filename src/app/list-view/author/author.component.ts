@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { BtnComponent } from '../../btn/btn.component';
-import { Author } from '../../model/book.model';
+import { Author } from "../../model/author.models";
 import { NgFor } from '@angular/common';
 
 @Component({

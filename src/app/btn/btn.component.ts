@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
 export class BtnComponent {
 	@Input({ required: true, alias: 'icon' }) icon!: string
 	@Input({ required: true, alias: 'css' }) css!: string
-	@Input({ required: true, alias: 'router' }) router!: string
+	@Input({ required: false, alias: 'router' }) router!: string
 }

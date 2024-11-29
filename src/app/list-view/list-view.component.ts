@@ -3,8 +3,8 @@ import { HeaderComponent } from './header/header.component'
 import { RowComponent } from './row/row.component'
 import { FooterComponent } from './footer/footer.component'
 import { NgFor } from '@angular/common'
-import { Book } from '../model/book.model'
-import { BooksServices } from './books.service'
+import { Book } from '../model/books.model'
+import { BooksServices } from '../services/books.service'
 import { RouterOutlet } from '@angular/router'
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core'
 import { NgIf } from '@angular/common';
 import { BtnComponent } from '../../btn/btn.component';
-import { Book } from '../../model/book.model';
+import { Book } from '../../model/books.model';
 import { AuthorComponent } from '../author/author.component';
 import { SubjectComponent } from '../subject/subject.component';
 

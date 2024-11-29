@@ -6,14 +6,29 @@
                 <button type="button" class="btn-close" [routerLink]="['']"></button>
             </div>
             <div class="modal-body">
-                <div class="mb-3">
-                    <label class="form-label">Nome</label>
-                    <input type="text" class="form-control" placeholder="name">
-                </div>
+                <form #form="ngForm"
+                    class="row g-3 needs-validation"
+                    novalidate
+                    [class.was-validated]="!form.valid && (form.dirty || form.touched)">
+                    <div class="col">
+                        <app-input label="Description" errorMessage="Need Caracter">
+                            <input
+                                id="Description"
+                                name="Description"
+                                type="text"
+                                class="form-control"
+                                placeholder="name"
+                                required
+                                minlength="1"
+                                maxlength="40"
+                                ngModel
+                                />
+                        </app-input>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-info text-white">Save</button>
+                <button type="button" class="btn btn-info text-white" [disabled]="!form.valid">Save</button>
             </div>
         </div>
     </div>

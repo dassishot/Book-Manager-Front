@@ -1,3 +1,6 @@
+import { Author } from "./author.models"
+import { Subject } from "./subjects.models"
+
 export interface Book {
     id: string,
     title: string,
@@ -6,12 +9,4 @@ export interface Book {
     year: number,
     authors : Author[],
     subjects : Subject[]
-}
-export interface Author {
-    id: string,
-    name: string
-}
-export interface Subject {
-    id: string,
-    description: string
 }
