@@ -19,6 +19,7 @@ export class ListViewComponent implements OnInit {
 	constructor(private bookService: BooksServices) { }
 	
 	ngOnInit(): void {
-		this.books = this.bookService.getBooks()
+		this.bookService.getBooks()
+			.subscribe(x => this.books = x)
 	}
 }
