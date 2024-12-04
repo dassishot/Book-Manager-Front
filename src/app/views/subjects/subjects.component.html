@@ -1,0 +1,15 @@
+<div class="container book">
+    <div class="row header align-items-center" app-header-list [items]="['Description']" ></div>
+    <app-item-list *ngFor="let subject of subjects()" [subject]="subject"/>
+    <div class="row align-items-center" *ngIf="!subjects().length">
+        <div class="col text-center px-0">
+            <p>No subjects available or still loading...</p>
+        </div>
+    </div>
+    <div class="row align-items-center justify-content-center mt-2">
+        <div class="col-1">
+            <button type="button" class="btn btn-sm btn-primary" routerLink="create"><i class="bi bi-plus"></i></button>
+        </div>
+    </div>
+</div>
+<router-outlet />

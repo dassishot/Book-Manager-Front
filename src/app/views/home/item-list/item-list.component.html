@@ -1,0 +1,21 @@
+<div class="row align-items-center">
+    <div class="col-1 text-center px-0">
+        <button type="button" class="btn btn-sm btn-outline-primary" (click)="ShowAuthor()"><i class="bi bi-plus"></i></button>
+        <button type="button" class="btn btn-sm btn-outline-primary" (click)="ShowSubject()"><i class="bi bi-person-vcard"></i></button>
+    </div>
+    <div class="col">{{book.title}}</div>
+    <div class="col">{{book.publisher}}</div>
+    <div class="col">{{book.edition}}</div>
+    <div class="col">{{book.publisher}}</div>
+    <div class="col">{{book.price}}</div>
+    <div class="col-1 text-center">
+        <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+    </div>
+</div>
+
+<div class="row align-items-center authors"
+    *ngIf="toogleAuthor"
+    app-list-authors [authors]="book.authors"></div>
+<div class="row align-items-center subjects"
+    *ngIf="toogleSubject"
+    app-list-subjects [subjects]="book.subjects"></div>

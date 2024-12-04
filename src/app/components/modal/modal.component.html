@@ -1,0 +1,17 @@
+<div class="modal fade show d-block">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">{{ title }}</h1>
+                <button type="button" class="btn-close" [routerLink]=[goBack]></button>
+            </div>
+            <div class="modal-body">
+                <ng-content></ng-content>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="onClick()" [disabled]="disabled">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show"></div>

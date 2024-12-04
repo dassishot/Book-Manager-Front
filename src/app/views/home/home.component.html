@@ -1,0 +1,10 @@
+<div class="container book">
+    <div class="row header align-items-center" app-header-list [items]="['Titulo', 'Editora', 'Edição', 'Publicação', 'Preço']"></div>
+    <app-item-list *ngFor="let book of _books()" [book]="book"/>
+    <div class="row align-items-center justify-content-center mt-2">
+        <div class="col-1">
+            <button type="button" class="btn btn-sm btn-primary" routerLink="create"><i class="bi bi-plus"></i></button>
+        </div>
+    </div>
+</div>
+<router-outlet />

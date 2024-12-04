@@ -1,0 +1,27 @@
+<app-modal 
+    id="CreateAuthor"
+    title="Criar Autor"
+    goBack="/authors"
+    (clickEvent)="SaveAuthor(form.value)"
+    [disabled]="!form.valid">
+    <form 
+        #form="ngForm"
+        novalidate
+        [class.was-validated]="!form.valid && (form.dirty || form.touched)">
+        <div class="row">
+            <app-input label="nome" errorMessage="Insira um nome">
+                <input
+                    id="nome"
+                    name="name"
+                    type="text"
+                    class="form-control"
+                    placeholder="Nome"
+                    autocomplete="off"
+                    required
+                    minlength="1"
+                    maxlength="40"
+                    ngModel />
+            </app-input>
+        </div>       
+    </form>
+</app-modal>

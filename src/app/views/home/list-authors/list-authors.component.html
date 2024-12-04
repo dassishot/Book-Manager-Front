@@ -1,0 +1,11 @@
+<div class="col-1 text-center v-100">
+    <button type="button" class="btn btn-sm btn-outline-primary"><i class="bi bi-person-add"></i></button>
+</div>
+<div class="col-11 align-items-center">
+    <div class="row">
+        <div class="col-4 text-start" *ngFor="let author of authors">
+            {{ author.name }}
+            <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-x"></i></button>
+        </div>
+    </div>
+</div>

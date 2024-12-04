@@ -1,0 +1,111 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    background-color: #c4d3f6;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+app-root,
+app-home,
+app-authors,
+app-subjects,
+app-item-list,
+app-create,
+app-modal,
+app-input {
+    width: 100%;
+}
+
+.book {
+    .header {
+        background-color: #6c7ae0;
+        color: #fff;
+        min-height: 50px;
+        border-top-left-radius: var(--bs-border-radius) !important;
+        border-top-right-radius: var(--bs-border-radius) !important;
+    }
+    app-item-list > div{
+        min-height: 50px;
+        background-color: #fff;
+        border-bottom: 1px solid #f2f2f2;
+        color: #666666;
+        &:last-of-type {
+            border-bottom-left-radius: var(--bs-border-radius) !important;
+            border-bottom-right-radius: var(--bs-border-radius) !important;
+        }
+    }
+    button {
+        border: none;
+        color: #666666;
+        &.btn-outline-primary:hover{
+            background-color: #6c7ae0;
+        }
+        &.btn-primary {
+            color: #FFFFFF;
+            background-color: #666666;
+            &:hover{
+                background-color: #6c7ae0;
+            }
+        }
+    }
+    .authors {
+        background-color: #b0b9f9;
+        text-align: center;
+        color: #fff;
+        button {
+            border: none;
+            margin-left: 10px;
+            color: #666666;
+            &:hover{
+                color: #FFFFFF;
+            }
+        }
+    }
+    .subjects {
+        font-size: 11px;
+        padding: 0 10px;
+        background-color: #f9f9f9;
+        div {
+            +div {
+                border-top: #666666 1px dotted;
+            }
+            margin: 0;
+            padding: 10px;
+        }
+    }
+    a {
+        color: #666666;
+        &+a {
+            margin-left: 5px;
+        }
+        &:hover {
+            color: #6c7ae0;
+        }
+        &.trash {
+            :hover {
+                color: red;
+            }
+        }   
+    }
+
+}
+
+nav {
+    display: flex;
+    align-items: center !important;
+    height: 50px;
+    a {
+        &:hover, &.active {
+            color: #6c7ae0;
+        }
+        color: #666666;
+        text-decoration: none;
+    }
+} 

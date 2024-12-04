@@ -1,0 +1,27 @@
+<app-modal 
+    id="CreateAuthor"
+    title="Criar Assunto"
+    goBack="/subjects"
+    (clickEvent)="SaveSubject(form.value)"
+    [disabled]="!form.valid">
+    <form 
+        #form="ngForm"
+        novalidate
+        [class.was-validated]="!form.valid && (form.dirty || form.touched)">
+        <div class="row">
+            <app-input label="descricao" errorMessage="Insira uma descrição">
+                <input
+                    id="descricao"
+                    name="description"
+                    type="text"
+                    class="form-control"
+                    placeholder="Nome"
+                    autocomplete="off"
+                    required
+                    minlength="1"
+                    maxlength="20"
+                    ngModel />
+            </app-input>
+        </div>       
+    </form>
+</app-modal>
