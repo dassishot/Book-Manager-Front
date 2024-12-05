@@ -1,6 +1,6 @@
 <div class="container book">
     <div class="row header align-items-center" app-header-list [items]="['Description']" ></div>
-    <app-item-list *ngFor="let subject of subjects()" [subject]="subject"/>
+    <app-item-list *ngFor="let subject of subjects()" [subject]="subject" (removeEvent)="remove($event)"/>
     <div class="row align-items-center" *ngIf="!subjects().length">
         <div class="col text-center px-0">
             <p>No subjects available or still loading...</p>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { ISubject } from '../../../interfaces/ISubject'
 
 @Component({
@@ -8,4 +8,9 @@ import { ISubject } from '../../../interfaces/ISubject'
 })
 export class ItemListComponent {
   @Input({ required: true }) subject!: ISubject
+  @Output() removeEvent = new EventEmitter<ISubject>();
+
+  onRemoveClick(): void {
+		this.removeEvent.emit(this.subject);
+	}
 }
