@@ -1,18 +1,22 @@
 <div class="select-dropdown">
     <div class="select-container">
-        <div class="badge">
-            awesome 
-            <button type="button" class="btn-close btn-sm"></button>
+        <div class="badge" *ngFor="let option of selectedOptions()">
+            {{ option }} 
+            <button type="button" class="btn-close btn-sm" (click)="removeOption(option)"></button>
         </div>
-        <div class="badge">
-            awesome 
-            <button type="button" class="btn-close btn-sm"></button>
-        </div>
-        <input name="description" type="text" autocomplete="off" class="col"/>
+        <input 
+            #searchInput
+            name="description"
+            type="text"
+            autocomplete="off"
+            class="col"
+            (blur)="onBlur($event)"
+            (focus)="toggleDropdown()"
+            (input)="filterOptions($event)"/>
     </div>
-    <ul class="dropdown-menu show">
+    <ul class="dropdown-menu" [class.show]="isDropdownOpen()">
         <li>Selecione o Autor</li>
-        <li><span class="dropdown-item-text fw-lighter">Add</span></li>
-        <li class="dropdown-item" *ngFor="let option of filteredOptions">{{ option }}</li>
+        <li *ngIf="showAdd()"><span class="dropdown-item-text fw-lighter">Add: {{ searchInput.value }}</span></li>
+        <li class="dropdown-item" *ngFor="let option of filteredOptions()" (click)="selectOption(option)">{{ option }}</li>
     </ul>
 </div>
