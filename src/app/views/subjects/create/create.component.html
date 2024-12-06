@@ -9,9 +9,9 @@
         novalidate
         [class.was-validated]="!form.valid && (form.dirty || form.touched)">
         <div class="row">
-            <app-input label="descricao" errorMessage="Insira uma descrição">
+            <div app-input label="description" title="Descrição" errorMessage="Insira uma descrição" class="col">
                 <input
-                    id="descricao"
+                    id="description"
                     name="description"
                     type="text"
                     class="form-control"
@@ -21,7 +21,7 @@
                     minlength="1"
                     maxlength="20"
                     ngModel />
-            </app-input>
+            </div>
         </div>       
     </form>
 </app-modal>
