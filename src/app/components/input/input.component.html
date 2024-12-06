@@ -1,5 +1,5 @@
 <label [for]="label" class="form-label">{{title}}</label>
 <ng-content></ng-content>
-<div class="invalid-feedback" *ngIf="this.ipt.invalid && (this.ipt.dirty || this.ipt.touched)">
+<div class="invalid" *ngIf="this.ipt?.invalid && (this.ipt?.dirty || this.ipt?.touched)">
     {{ errorMessage }}
 </div>

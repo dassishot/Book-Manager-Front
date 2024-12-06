@@ -41,8 +41,7 @@
                     placeholder="Editora"
                     autocomplete="off"
                     required
-                    minlength="1"
-                    maxlength="40"
+                    pattern="^[0-9]*$"
                     ngModel />
             </div>
             <div app-input label="year" title="Ano" errorMessage="Insira o ano" class="col-sm">
@@ -53,9 +52,8 @@
                     class="form-control"
                     placeholder="Editora"
                     autocomplete="off"
+                    appYear
                     required
-                    minlength="1"
-                    maxlength="40"
                     ngModel />
             </div>
             <div app-input label="price" title="Preço" errorMessage="Insira o preco" class="col-sm">
@@ -66,11 +64,12 @@
                     class="form-control"
                     placeholder="Editora"
                     autocomplete="off"
+                    appCurrency
                     required
-                    minlength="1"
-                    maxlength="40"
                     ngModel />
             </div>
         </div>
     </form>
+
+    {{ form.value | json }}
 </app-modal>
