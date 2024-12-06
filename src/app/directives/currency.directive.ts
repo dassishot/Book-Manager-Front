@@ -10,17 +10,18 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 	}]
 })
 export class CurrencyDirective implements ControlValueAccessor {
-	private onChange: (value: any) => void = () => {}
-
+	
 	#el = inject(ElementRef)
   
 	writeValue(value: any): void {
 	  const numericValue = value ? value.toString().replace(/[^0-9]/g, '') : '0'
 	  this.#el.nativeElement.value = this.formatCurrency(numericValue)
 	}
+
+	#onChange: (value: any) => void = () => {}
   
 	registerOnChange(fn: any): void {
-	  this.onChange = fn
+	  this.#onChange = fn
 	}
   
 	registerOnTouched(fn: any): void {}
@@ -28,7 +29,7 @@ export class CurrencyDirective implements ControlValueAccessor {
 	@HostListener('input', ['$event.target.value'])
 	onInput(value: string): void {
 	  const numericValue = value.replace(/[^0-9]/g, '')
-	  this.onChange(parseFloat(numericValue) / 100)
+	  this.#onChange(parseFloat(numericValue) / 100)
 	  this.#el.nativeElement.value = this.formatCurrency(numericValue)
 	}
   

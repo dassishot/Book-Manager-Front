@@ -40,10 +40,10 @@ export class YearDirective implements ControlValueAccessor {
 
 		if (numericValue > this.#currentYear) {
 			this.#el.nativeElement.value = this.#currentYear.toString()
-			this.#onChange(this.#currentYear) // Atualiza o modelo com o valor válido
+			this.#onChange(this.#currentYear)
 		} else {
 			this.#el.nativeElement.value = sanitizedValue
-			this.#onChange(numericValue || 0) // Atualiza o modelo
+			this.#onChange(numericValue || 0)
 		}
 	}
 }

@@ -93,7 +93,6 @@ app-modal{
             }
         }   
     }
-
 }
 
 nav {
@@ -109,11 +108,62 @@ nav {
     }
 }
  
-
 .invalid {
     display: block;
     width: 100%;
     margin-top: .25rem;
     font-size: .875em;
     color: var(--bs-form-invalid-color);
+}
+
+.select-dropdown {
+    position: relative;
+    border: 1px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 100%;
+
+    & .select-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: .375rem .375rem;
+        & .badge {
+            flex: 1 0 0%;
+            background-color: #6c7ae0;
+            +.badge {
+                margin-left: 5px;
+            }
+            .btn-close {
+                height: 8px;
+                padding: .50em .25em;
+                color: #f2f2f2;
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+    & input, & input:focus
+    {
+        outline: none; /* Remove o contorno azul padrão */
+        box-shadow: none; /* Remove o sombreamento que o Bootstrap aplica */
+        border-color: transparent; /* Remove a cor da borda */
+    }
+    & .dropdown-menu {
+        width: 100%;
+        & li:first-child {
+            color: #6c7ae0;
+            font-size: 11px;
+            padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+        }
+        & .dropdown-item {
+            cursor: pointer;
+            &.active, &:active {
+                background-color:#6c7ae0;
+            }
+        }
+       
+    }
 }

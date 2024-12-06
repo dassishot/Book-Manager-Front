@@ -1,0 +1,18 @@
+<div class="select-dropdown">
+    <div class="select-container">
+        <div class="badge">
+            awesome 
+            <button type="button" class="btn-close btn-sm"></button>
+        </div>
+        <div class="badge">
+            awesome 
+            <button type="button" class="btn-close btn-sm"></button>
+        </div>
+        <input name="description" type="text" autocomplete="off" class="col"/>
+    </div>
+    <ul class="dropdown-menu show">
+        <li>Selecione o Autor</li>
+        <li><span class="dropdown-item-text fw-lighter">Add</span></li>
+        <li class="dropdown-item" *ngFor="let option of filteredOptions">{{ option }}</li>
+    </ul>
+</div>
